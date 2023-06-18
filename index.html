@@ -4,22 +4,164 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/index.css">
+
     <title>Document</title>
 </head>
 
 <body>
+    <!-- Header -->
     <div class="header"></div>
+    <!-- Main -->
     <div class="main">
+        <!-- Top -->
         <section class="top">
             <div class="top_bg">
                 <img src="https://picsum.photos/1000/200" alt="">
             </div>
+            <div class="top_filter"></div>
             <div class="top_content">
+                <div class="top_content_verified">
+                    <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px"
+                        viewBox="0 0 24 24" width="24px" fill="#000000">
+                        <g>
+                            <rect fill="none" height="24" width="24" />
+                        </g>
+                        <g>
+                            <path
+                                d="M23,12l-2.44-2.79l0.34-3.69l-3.61-0.82L15.4,1.5L12,2.96L8.6,1.5L6.71,4.69L3.1,5.5L3.44,9.2L1,12l2.44,2.79l-0.34,3.7 l3.61,0.82L8.6,22.5l3.4-1.47l3.4,1.46l1.89-3.19l3.61-0.82l-0.34-3.69L23,12z M10.09,16.72l-3.8-3.81l1.48-1.48l2.32,2.33 l5.85-5.87l1.48,1.48L10.09,16.72z" />
+                        </g>
+                    </svg>
+                    Verified developer
+                </div>
+                <div class="top_content_name">
+                    <h1>Quang Vu</h1>
+                </div>
+                <div class="top_content_monthly">
+                    123,123123 monthly viewers
+                </div>
             </div>
         </section>
-        <section class="mid"></section>
-        <section></section>
+        <!-- Middle -->
+        <section class="mid">
+            <div class="mid_top_buttons">
+                <div class="mid_top_buttons_play">
+                    <svg class="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M512 68.191078c-245.204631 0-443.808922 198.60429-443.808922 443.808922s198.60429 443.808922 443.808922 443.808922 443.808922-198.60429 443.808922-443.808922S757.203608 68.191078 512 68.191078zM423.23842 711.713554 423.23842 312.285422l266.284739 199.713554L423.23842 711.713554z" />
+                    </svg>
+                </div>
+                <div class="mid_top_buttons_follow">
+                    FOLLOW
+                </div>
+                <div class="mid_top_buttons_more">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="1" />
+                        <circle cx="19" cy="12" r="1" />
+                        <circle cx="5" cy="12" r="1" />
+                    </svg>
+                </div>
+            </div>
+            <div class="mid_popular_pick">
+                <div class="mid_popular">
+                    <h2 class="mid_title">Popular</h2>
+                    <ul class="mid_popular_list">
+                        <li>
+                            <div>
+                                <span>1</span>
+                                <img src="https://picsum.photos/50/50" alt="">
+                                <h3 class="mid_item_name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+                                    ipsum dolorLorem ipsum dolorLorem ipsum dolor</h3>
+                            </div>
+                            <div>
+                                <h3 class="mid_item_viewers color_gray">100,000</h3>
+                            </div>
+                            <div>
+                                <div class="mid_item_liked">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
+                                        width="24px" fill="#000000">
+                                        <path d="M0 0h24v24H0z" fill="none" />
+                                        <path
+                                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                    </svg>
+                                </div>
+                                <h3 class="mid_item_length color_gray">3:30</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span>1</span>
+                                <img src="https://picsum.photos/50/50" alt="">
+                                <h3 class="mid_item_name">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                            </div>
+                            <div>
+                                <h3 class="mid_item_viewers color_gray">100,000</h3>
+                            </div>
+                            <div>
+                                <div class="mid_item_liked">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
+                                        width="24px" fill="#000000">
+                                        <path d="M0 0h24v24H0z" fill="none" />
+                                        <path
+                                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                    </svg>
+                                </div>
+                                <h3 class="mid_item_length color_gray">3:30</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span>1</span>
+                                <img src="https://picsum.photos/50/50" alt="">
+                                <h3 class="mid_item_name">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                            </div>
+                            <div>
+                                <h3 class="mid_item_viewers color_gray">100,000</h3>
+                            </div>
+                            <div>
+                                <div class="mid_item_liked">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
+                                        width="24px" fill="#000000">
+                                        <path d="M0 0h24v24H0z" fill="none" />
+                                        <path
+                                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                    </svg>
+                                </div>
+                                <h3 class="mid_item_length color_gray">3:30</h3>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mid_pick">
+                    <h2 class="mid_title">Artist pick</h2>
+                    <ul class="mid_pick_list">
+                        <li>
+                            <img src="https://picsum.photos/70/70" alt="">
+                            <div>
+                                <div class="color_gray">
+                                    <img src="https://picsum.photos/22/22" alt="">
+                                    Posted by me
+                                </div>
+                                <h3 class="mid_item_name">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                </h3>
+                                <h4 class="color_gray">Playlist</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mid_discography"></div>
+            <div class="mid_featuring"></div>
+            <div class="mid_ontour"></div>
+            <div class="mid_also_like"></div>
+            <div class="mid_appears_on"></div>
+            <div class="mid_discovered_on"></div>
+            <div class="mid_about"></div>
+        </section>
     </div>
+    <!-- Footer -->
     <div class="footer"></div>
 </body>
 
