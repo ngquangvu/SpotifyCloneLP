@@ -4,6 +4,8 @@ body {
     color: #FFFFFF;
     font-size: 15px;
     line-height: 22px;
+    margin: auto;
+    overflow-x: hidden;
 }
 
 .common_width {
@@ -101,42 +103,27 @@ body {
 
 /* Top */
 .top {
-    position: relative;
     width: 100%;
-}
-
-.top_bg {
-    width: 100%;
-}
-
-.top_bg img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
-.top_filter {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #000000;
-    opacity: 0.5;
 }
 
 .top_content {
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 25px;
+    padding: 110px 25px 25px;
+}
+
+.top_content::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    filter: opacity(0.5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://picsum.photos/1000/200');
 }
 
 .top_content_verified {
@@ -263,12 +250,16 @@ body {
 .mid_popular_pick {
     width: 100%;
     display: flex;
-    margin-bottom: 70px;
+    justify-content: space-between;
+    margin-bottom: 60px;
 }
 
 .mid_popular {
-    width: 60%;
-    padding-right: 100px;
+    width: 50%;
+}
+
+.mid_pick {
+    width: 40%;
 }
 
 .mid_popular_list {
@@ -280,7 +271,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: calc(100% - 20px);
     padding: 5px 10px;
     margin-bottom: 10px;
 }
@@ -310,11 +301,6 @@ body {
     margin-right: 15px;
 }
 
-.mid_pick {
-    width: 40%;
-    padding-right: 50px;
-}
-
 .mid_pick_list {
     display: flex;
     flex-direction: column;
@@ -325,7 +311,6 @@ body {
     display: flex;
     padding: 5px 0;
     margin-bottom: 10px;
-    width: 285px;
 }
 
 .mid_pick_list li>img {
@@ -336,6 +321,7 @@ body {
 
 .mid_pick_list li>div {
     width: 100%;
+    max-width: 250px;
 }
 
 .mid_pick_list li>div>div {
@@ -353,7 +339,6 @@ body {
 
 .mid_pick_list li>div h3 {
     font-size: 15px;
-    width: 250px;
 }
 
 .mid_pick_list li>div h4 {
@@ -410,13 +395,21 @@ body {
 
 .mid_ontour_list {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     width: 100%;
 }
 
 .mid_ontour_list li {
     display: flex;
-    width: 100%;
+    width: 30%;
+    min-width: 300px;
+    margin-bottom: 15px;
+    margin-right: 20px;
+}
+
+.mid_ontour_list li:last-of-type {
+    margin-bottom: 0;
+    margin-right: 20px;
 }
 
 .mid_ontour_item_date {
@@ -430,6 +423,7 @@ body {
     font-weight: bold;
     color: #FFFFFF;
     background-color: #1c1c1c;
+    padding: 0 5px;
     margin-right: 16px;
 }
 
@@ -507,4 +501,112 @@ body {
     left: 0;
     background-color: #000000;
     opacity: 0.4;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .common_width {
+        width: 100%;
+    }
+
+    .footer_top {
+        flex-direction: column;
+    }
+
+    .footer_top_links {
+        margin-bottom: 20px;
+    }
+
+    .footer_top_links div {
+        margin-right: 10vw;
+    }
+
+
+    .mid {
+        width: calc(100% - 40px);
+        padding: 20px;
+    }
+
+    .mid_popular_pick {
+        flex-direction: column;
+    }
+
+    .mid_popular {
+        width: 100%;
+        padding-right: 0;
+    }
+
+
+    .mid_popular_list {
+        margin-bottom: 30px;
+    }
+
+    .mid_card_list {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+    }
+
+    .mid_ontour_list li:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .mid_customers_list {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+    }
+
+    .mid_about {
+        width: 100%;
+    }
+
+    .mid_about_content {
+        width: 100%;
+    }
+
+}
+
+
+@media only screen and (max-width: 479px) {
+    .top_content_name h1 {
+        font-size: 12vw;
+    }
+
+    .mid_popular_list li>div:not(:first-child) {
+        flex-direction: column;
+        width: 20%;
+    }
+
+    .mid_card_list {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        gap: 15px;
+    }
+
+    .mid_customers_list {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        gap: 15px;
+    }
+
+    .mid_discography_buttons {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .mid_discography_buttons a {
+        margin-bottom: 10px;
+    }
+
+    .mid_about {
+        height: 400px;
+        margin-bottom: 20px;
+    }
+
+    .mid_about_content {
+        height: calc(100% - 10vw);
+    }
+
+    .mid_about_content>div:first-child {
+        padding: 5vw;
+    }
 }
