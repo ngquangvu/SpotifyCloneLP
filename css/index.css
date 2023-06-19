@@ -177,7 +177,7 @@ body {
 }
 
 .mid_item_liked svg {
-    fill: greenyellow;
+    fill: #1fdf64;
     margin: 0 14px;
 }
 
@@ -239,7 +239,7 @@ body {
 }
 
 .mid_top_buttons_play svg {
-    fill: greenyellow;
+    fill: #1fdf64;
     width: 70px;
     height: 70px;
 }
@@ -385,6 +385,11 @@ body {
     border-radius: 20px;
     padding: 5px 10px;
     margin-right: 10px;
+}
+
+.mid_discography_buttons a:not(:first-of-type) {
+    color: #FFFFFF;
+    background-color: #1e1e1e;
 }
 
 .mid_discography_buttons a:last-of-type {
