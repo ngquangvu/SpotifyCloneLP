@@ -112,6 +112,7 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     padding: 110px 25px 25px;
+    background: linear-gradient(to bottom, rgba(255, 0, 0, 0) 0%, #121212 100%);
 }
 
 .top_content::before {
@@ -124,6 +125,7 @@ body {
     width: 100%;
     height: 100%;
     background-image: url('https://picsum.photos/1000/200');
+    background-repeat: round;
 }
 
 .top_content_verified {
@@ -338,6 +340,7 @@ body {
 }
 
 .mid_pick_list li>div h3 {
+    max-width: 200px;
     font-size: 15px;
 }
 
@@ -499,8 +502,7 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: #000000;
-    opacity: 0.4;
+    background: linear-gradient(to bottom, rgba(255, 0, 0, 0) 0%, #121212 100%);
 }
 
 
@@ -514,13 +516,20 @@ body {
     }
 
     .footer_top_links {
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
 
     .footer_top_links div {
         margin-right: 10vw;
     }
 
+    .footer_top_links div:last-of-type {
+        margin-right: 0;
+    }
+
+    .footer_bottom>div a {
+        margin-bottom: 10px;
+    }
 
     .mid {
         width: calc(100% - 40px);
@@ -562,18 +571,37 @@ body {
     .mid_about_content {
         width: 100%;
     }
-
 }
-
 
 @media only screen and (max-width: 479px) {
     .top_content_name h1 {
-        font-size: 12vw;
+        font-size: 13vw;
+        margin-bottom: 8px;
+    }
+
+    .mid {
+        width: calc(100% - 32px);
+        padding: 16px;
+    }
+
+    .mid_item_viewers, .mid_item_length {
+        font-size: 13px;
+        margin: 0;
+    }
+
+    .mid_item_liked svg {
+        margin: 0;
+    }
+
+    .mid_popular_list li {
+        width: 100%;
+        padding: 5px 0;
     }
 
     .mid_popular_list li>div:not(:first-child) {
         flex-direction: column;
-        width: 20%;
+        justify-content: flex-end;
+        width: auto;
     }
 
     .mid_card_list {
