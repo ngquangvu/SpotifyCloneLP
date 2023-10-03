@@ -4,102 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/index.css">
-
-    <title>Document</title>
-
-    <script>
-        const mobile_icon_1 = document.getElementById("mobile-icon");
-        const mobile_menu = document.getElementById("mobile-menu");
-        const hamburger_icon = document.querySelector("#mobile-icon i");
-
-        function openCloseMenu() {
-            mobile_menu.classList.toggle("block");
-            mobile_menu.classList.toggle("active");
-        }
-
-        function changeIcon(icon) {
-            icon.classList.toggle("fa-xmark");
-        }
-
-        mobile_icon_1.addEventListener("click", openCloseMenu);
-
-        function dropdownUserAccount() {
-
-            let userAccount = document.getElementById("userAccount");
-            userAccount.classList.toggle('user-dropdown-hide')
-        }
-
-        let navMenus = document.getElementsByClassName("nav-menu-a");
-        if (window.location.href.includes('browse-libraries')) {
-            navMenus[1].classList.add('active-nav')
-        }
-
-        if (window.location.pathname.startsWith('/functions')) {
-            document.querySelector('.function').classList.add('active-nav')
-        }
-
-
-        for (let i = 0; i < navMenus.length; i++) {
-            if (navMenus[i].href === window.location.href) {
-                navMenus[i].classList.add('active-nav')
-            }
-        }
-
-
-        // custom-cursor
-        const cursor = document.querySelector('#custom-cursor');
-        let mouse = {
-            x: 300,
-            y: 300
-        };
-        let pos = {
-            x: 0,
-            y: 0
-        };
-        const speed = 0.1; // between 0 and 1
-
-        const updatePosition = () => {
-            pos.x += (mouse.x - pos.x) * speed;
-            pos.y += (mouse.y - pos.y) * speed;
-            cursor.style.transform = 'translate3d(' + pos.x + 'px ,' + pos.y + 'px, 0)';
-        };
-
-        const updateCoordinates = e => {
-            mouse.x = e.clientX;
-            mouse.y = e.clientY;
-        }
-
-        window.addEventListener('mousemove', updateCoordinates);
-
-        function loop() {
-            updatePosition();
-            requestAnimationFrame(loop);
-        }
-
-        requestAnimationFrame(loop);
-
-        //start sticky navbar
-        window.onscroll = function () {
-            myFunction()
-        };
-
-        let stickyNavbar = document.getElementById("stickyNavbar");
-        let sticky = stickyNavbar.offsetTop;
-
-        function myFunction() {
-            if (window.pageYOffset >= sticky) {
-                stickyNavbar.classList.add("sticky")
-            } else {
-                stickyNavbar.classList.remove("sticky");
-            }
-        }
-
-        Paddle.Setup({
-            vendor: 163867,
-        });
-    </script>
+    <link rel="stylesheet" href="./css/animation.css">
+    <title>Clone Spotify</title>
 </head>
 
 <body>
@@ -138,15 +47,15 @@
         <!-- Middle -->
         <section class="mid">
             <div class="mid_top_buttons">
-                <div class="mid_top_buttons_play">
+                <a href="#" class="mid_top_buttons_play">
                     <svg class="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M512 68.191078c-245.204631 0-443.808922 198.60429-443.808922 443.808922s198.60429 443.808922 443.808922 443.808922 443.808922-198.60429 443.808922-443.808922S757.203608 68.191078 512 68.191078zM423.23842 711.713554 423.23842 312.285422l266.284739 199.713554L423.23842 711.713554z" />
                     </svg>
-                </div>
-                <div class="mid_top_buttons_follow">
+                </a>
+                <button type="button" class="mid_top_buttons_follow">
                     FOLLOW
-                </div>
+                </button>
                 <div class="mid_top_buttons_more">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -163,7 +72,7 @@
                         <li>
                             <div>
                                 <span>1</span>
-                                <img src="https://picsum.photos/50/50" alt="">
+                                <img src="https://picsum.photos/50/50" alt="dummy image" width="50" height="50">
                                 <h3 class="mid_item_name text_ellipsis">Lorem ipsum dolor sit amet
                                     consectetur
                                     adipisicing elit. Lorem
@@ -187,7 +96,7 @@
                         <li>
                             <div>
                                 <span>1</span>
-                                <img src="https://picsum.photos/50/51" alt="">
+                                <img src="https://picsum.photos/50/51" alt="dummy image" width="50" height="50">
                                 <h3 class="mid_item_name text_ellipsis">Lorem ipsum dolor sit amet consectetur
                                     adipisicing elit.</h3>
                             </div>
@@ -209,7 +118,7 @@
                         <li>
                             <div>
                                 <span>1</span>
-                                <img src="https://picsum.photos/50/52" alt="">
+                                <img src="https://picsum.photos/50/52" alt="dummy image" width="50" height="50">
                                 <h3 class="mid_item_name text_ellipsis">Lorem ipsum dolor sit amet consectetur
                                     adipisicing elit.</h3>
                             </div>
@@ -234,10 +143,10 @@
                     <h2 class="mid_title">Artist pick</h2>
                     <ul class="mid_pick_list">
                         <li>
-                            <img src="https://picsum.photos/70/70" alt="">
+                            <img src="https://picsum.photos/70/70" alt="dummy image" width="70" height="70" >
                             <div>
                                 <div class="color_gray">
-                                    <img src="https://picsum.photos/22/22" alt="">
+                                    <img src="https://picsum.photos/22/22" alt="dummy image" >
                                     Posted by me
                                 </div>
                                 <h3 class="mid_item_name text_ellipsis">Lorem ipsum dolor sit, amet consectetur
@@ -251,40 +160,40 @@
             </div>
             <div class="mid_discography">
                 <h2 class="mid_title">Discography</h2>
-                <div class="mid_discography_buttons">
+                <div class="mid_discography_buttons ">
                     <a href="#">Popular releases</a>
                     <a href="#">Albums</a>
                     <a href="#">Compilations</a>
                     <a href="#">Single and EPs</a>
                 </div>
-                <ul class="mid_card_list mid_discography_list">
+                <ul class="mid_card_list mid_discography_list anm-list">
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/250/250" alt="">
+                        <img src="https://picsum.photos/250/250" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4>Ea ullam dolore</h4>
                     </li>
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/251/250" alt="">
+                        <img src="https://picsum.photos/251/250" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4>Ea ullam dolore</h4>
                     </li>
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/252/250" alt="">
+                        <img src="https://picsum.photos/252/250" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4>Ea ullam dolore</h4>
                     </li>
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/253/250" alt="">
+                        <img src="https://picsum.photos/253/250" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4>Ea ullam dolore</h4>
                     </li>
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/254/250" alt="">
+                        <img src="https://picsum.photos/254/250" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4>Ea ullam dolore</h4>
                     </li>
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/255/250" alt="">
+                        <img src="https://picsum.photos/255/250" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4>Ea ullam dolore</h4>
                     </li>
@@ -292,34 +201,34 @@
             </div>
             <div class="mid_featuring">
                 <h2 class="mid_title">Featuring</h2>
-                <ul class="mid_card_list mid_featering_list">
+                <ul class="mid_card_list mid_featering_list anm-list">
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/240/251" alt="">
+                        <img src="https://picsum.photos/240/251" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4>Ea ullam dolore</h4>
                     </li>
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/251/252" alt="">
+                        <img src="https://picsum.photos/251/252" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4>Ea ullam dolore</h4>
                     </li>
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/252/253" alt="">
+                        <img src="https://picsum.photos/252/253" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4>Ea ullam dolore</h4>
                     </li>
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/253/254" alt="">
+                        <img src="https://picsum.photos/253/254" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4>Ea ullam dolore</h4>
                     </li>
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/254/255" alt="">
+                        <img src="https://picsum.photos/254/255" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4>Ea ullam dolore</h4>
                     </li>
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/255/255" alt="">
+                        <img src="https://picsum.photos/255/255" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4>Ea ullam dolore</h4>
                     </li>
@@ -327,7 +236,7 @@
             </div>
             <div class="mid_ontour">
                 <h2 class="mid_title">On tour</h2>
-                <ul class="mid_ontour_list">
+                <ul class="mid_ontour_list anm-right">
                     <li>
                         <div class="mid_ontour_item_date"><span>Jun</span>24</div>
                         <div>
@@ -354,34 +263,34 @@
             </div>
             <div class="mid_customer">
                 <h2 class="mid_title">Fans also like</h2>
-                <ul class="mid_card_list mid_customers_list">
+                <ul class="mid_card_list mid_customers_list anm-list">
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/249/250" alt="">
+                        <img src="https://picsum.photos/249/250" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4>Ea ullam dolore</h4>
                     </li>
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/251/251" alt="">
+                        <img src="https://picsum.photos/251/251" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4>Ea ullam dolore</h4>
                     </li>
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/252/252" alt="">
+                        <img src="https://picsum.photos/252/252" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4>Ea ullam dolore</h4>
                     </li>
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/253/253" alt="">
+                        <img src="https://picsum.photos/253/253" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4>Ea ullam dolore</h4>
                     </li>
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/254/254" alt="">
+                        <img src="https://picsum.photos/254/254" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4>Ea ullam dolore</h4>
                     </li>
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/255/255" alt="">
+                        <img src="https://picsum.photos/255/255" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4>Ea ullam dolore</h4>
                     </li>
@@ -389,33 +298,33 @@
             </div>
             <div class="mid_discovered_on">
                 <h2 class="mid_title">Discovered On</h2>
-                <ul class="mid_customers_list">
+                <ul class="mid_customers_list anm-list">
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/245/250" alt="">
+                        <img src="https://picsum.photos/245/250" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4 class="color_gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
                             assumenda</h4>
                     </li>
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/256/251" alt="">
+                        <img src="https://picsum.photos/256/251" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4 class="color_gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
                             assumenda</h4>
                     </li>
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/257/252" alt="">
+                        <img src="https://picsum.photos/257/252" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4 class="color_gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
                             assumenda</h4>
                     </li>
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/258/253" alt="">
+                        <img src="https://picsum.photos/258/253" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4 class="color_gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
                             assumenda</h4>
                     </li>
                     <li class="mid_item_card ">
-                        <img src="https://picsum.photos/259/254" alt="">
+                        <img src="https://picsum.photos/259/254" alt="dummy image" width="148.67" height="148.67">
                         <h3 class="text_ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
                         <h4 class="color_gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
                             assumenda</h4>
@@ -423,7 +332,7 @@
                 </ul>
             </div>
             <div class="mid_about">
-                <div class="mid_about_content">
+                <div class="mid_about_content anm-up">
                     <div>
                         <h3>31232321 monthly viewers</h3>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias ullam distinctio sit
@@ -497,6 +406,8 @@
             </div>
         </div>
     </div>
+
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
